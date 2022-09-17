@@ -1,11 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   color: #333;
 }
 
 body {
-  background-color: #81a69b;
-  background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+  background-color: #cce5f5;
+  /* background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg); */
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -70,10 +74,9 @@ body {
 
 .image-container {
   clip-path: circle(50% at 50% 50%);
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 0px 20px 0px 10px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .pet h1 {

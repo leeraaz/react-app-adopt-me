@@ -6,13 +6,13 @@ const Pet = ({ name, animal, breed, images, location, id }) => {
     hero = images[0]
   }
   return (
-    <Link to={`/details/${id}`} className="pet">
-      <div className="image-container">
-        <img src={hero} alt={name} />
+    <Link to={`/details/${id}`} className="bg-slate-100">
+      <div id="pet-image-container" className="image-container">
+        <img id="pet-image" src={hero} alt={name} />
       </div>
-      <div className="info">
-        <h1> {name}</h1>
-        <h2> {animal} - {breed} - {location}</h2>
+      <div id="pet-info-container" className="text-center">
+        <h1 id="pet-name"> {name}</h1>
+        <h2 id="pet-info"> {animal} - {breed} - {location}</h2>
       </div>
     </Link>
   );
