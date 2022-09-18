@@ -28,7 +28,7 @@ const SearchParams = () => {
 
   return (
     <div className="px-2">
-      <div className="w-full max-w-full">
+      <div id="search-div" className="w-full max-w-full">
         <form
           id="search-from"
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -38,10 +38,14 @@ const SearchParams = () => {
           }}
         >
           <div className="flex flex-wrap -mx-3">
-            <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+            <div
+              id="div-location"
+              className="w-full md:w-1/4 px-3 mb-6 md:mb-0"
+            >
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="location"
+                data-cy="form-location-element"
               >
                 Location
               </label>
@@ -49,22 +53,23 @@ const SearchParams = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="location"
                 type="text"
+                data-cy="form-location-element"
                 placeholder="Seattle, WA"
               />
             </div>
-            <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+            <div id="div-animal" className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="animal"
               >
                 Animal Type
               </label>
+              
               <div className="relative">
                 <select
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="animal"
                   value={animal}
-                  data-cy="form-element"
                   onChange={(e) => {
                     updateAnimal(e.target.value);
                     updateBreed("");
@@ -76,7 +81,7 @@ const SearchParams = () => {
                 >
                   <option> ---- Select Animal Type ----</option>
                   {ANIMALS.map((animal) => (
-                    <option key={animal} value={animal}>
+                    <option id={`animal-${animal}`} key={animal} value={animal}>
                       {animal.toLocaleUpperCase()}
                     </option>
                   ))}
@@ -92,7 +97,7 @@ const SearchParams = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+            <div id="div-breed" className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="breed"
@@ -110,7 +115,7 @@ const SearchParams = () => {
                 >
                   <option> ---- Select Breed Type ----</option>
                   {breeds.map((breed) => (
-                    <option key={breed} value={breed}>
+                    <option id={`breed-` + breed} key={breed} value={breed}>
                       {breed}
                     </option>
                   ))}
